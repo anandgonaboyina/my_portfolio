@@ -1,6 +1,6 @@
 import { pool } from "@/lib/db";
 import Link from "next/link";
-import { FadeIn, Typewriter, FloatingParticles, ScrollIndicator } from "@/components/HomeAnimations";
+import { FadeIn, Typewriter, ScrollIndicator } from "@/components/HomeAnimations";
 import ProjectCard from "@/components/projectCard";
 import AutoSlider from "@/components/AutoSlider";
 
