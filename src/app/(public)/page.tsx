@@ -19,7 +19,45 @@ export default async function HomePage() {
         const [galleryRows] = await pool.execute("SELECT * FROM portfolio_life ORDER BY created_at DESC") as any[];
         lifeMoments = galleryRows as any[];
     } catch (e) {
-        console.error("Failed to fetch data", e);
+        console.error("Failed to fetch data from DB. Falling back to hardcoded data.", e);
+        
+        skills = [
+            {"id":1,"name":"HTML5","category":"1. Languages","logo":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"},
+            {"id":2,"name":"JavaScript","category":"1. Languages","logo":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"},
+            {"id":3,"name":"TypeScript","category":"1. Languages","logo":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"},
+            {"id":4,"name":"Next.js","category":"2. Frontend","logo":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"},
+            {"id":5,"name":"React.js","category":"2. Frontend","logo":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"},
+            {"id":6,"name":"Redux Toolkit","category":"2. Frontend","logo":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg"},
+            {"id":7,"name":"Tailwind CSS","category":"2. Frontend","logo":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"},
+            {"id":8,"name":"Bootstrap","category":"2. Frontend","logo":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"},
+            {"id":9,"name":"Node.js","category":"3. Backend","logo":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"},
+            {"id":10,"name":"Express.js","category":"3. Backend","logo":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"},
+            {"id":11,"name":"MongoDB","category":"3. Backend","logo":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"},
+            {"id":12,"name":"MySQL","category":"3. Backend","logo":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"},
+            {"id":14,"name":"Photoshop","category":"4. Design","logo":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg"},
+            {"id":15,"name":"Premiere Pro","category":"4. Design","logo":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg"},
+            {"id":13,"name":"Postman","category":"4. Tools","logo":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"}
+        ];
+
+        projects = [
+            {
+                "id":1,
+                "title":"Tasky - MERN Stack Task Manager with Glassy UI",
+                "slug":"tasky-mern-glassy-ui",
+                "thumbnail_url":"https://res.cloudinary.com/djrgrmvmr/image/upload/v1780066546/anand_portfolio/j6xavbw1prbnki6b3tuf.png",
+                "description":"A secure full-stack task manager built with MongoDB, Express, React, and Node.js. It features a modern Glassmorphism UI using Tailwind CSS and tailwind-animate, JWT auth with bcryptjs password hashing, precise task scheduling with full status tracking, and automated email workflows via Brevo API.",
+                "github_link":"https://github.com/anandgonaboyina/TaskManager_MERN_FullStack/tree/main?tab=readme-ov-file",
+                "live_link":"https://task-manager-mern-full-stack.vercel.app/"
+            }
+        ];
+
+        lifeMoments = [
+            {
+                "id":1,
+                "title":"Hardware Tinkering: Modding micro-USB to Type-C",
+                "image_url":"https://res.cloudinary.com/djrgrmvmr/image/upload/v1780105114/anand_portfolio/s3apgjwqk6yvvrkaohyl.jpg"
+            }
+        ];
     }
 
     return (
