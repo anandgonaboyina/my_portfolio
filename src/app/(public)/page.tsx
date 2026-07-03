@@ -41,6 +41,15 @@ export default async function HomePage() {
 
         projects = [
             {
+                "id":2,
+                "title":"GrindBoard - Live PC Wallpaper & Productivity Dashboard",
+                "slug":"grindboard-pwa-dashboard",
+                "thumbnail_url":"https://res.cloudinary.com/djrgrmvmr/image/upload/v1783068584/anand_portfolio/gp4uenarlvrsvkefus8z.png",
+                "description":"GrindBoard is a highly interactive, dual-purpose PWA that works as both a normal web app and a beautiful live PC wallpaper. Built with Next.js, it features a Focus Timer, interactive Health Rings, Roadmap Manager, automated Calendar, and seamless database synchronization.",
+                "github_link":"https://github.com/anandgonaboyina/wallpaper-dashboard-cloud",
+                "live_link":"https://wallpaper-dashboard-cloud.vercel.app/dashboard"
+            },
+            {
                 "id":1,
                 "title":"Tasky - MERN Stack Task Manager with Glassy UI",
                 "slug":"tasky-mern-glassy-ui",
