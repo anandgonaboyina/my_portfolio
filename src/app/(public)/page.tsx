@@ -45,7 +45,7 @@ export default async function HomePage() {
                 "title":"GrindBoard - Live PC Wallpaper & Productivity Dashboard",
                 "slug":"grindboard-pwa-dashboard",
                 "thumbnail_url":"https://res.cloudinary.com/djrgrmvmr/image/upload/v1783068584/anand_portfolio/gp4uenarlvrsvkefus8z.png",
-                "description":"GrindBoard is a highly interactive, dual-purpose PWA that works as both a normal web app and a beautiful live PC wallpaper. Built with Next.js, it features a Focus Timer, interactive Health Rings, Roadmap Manager, automated Calendar, and seamless database synchronization.",
+                "description":"GrindBoard is a live, fully responsive productivity dashboard that you can install directly on your phone or desktop as a PWA, acting as both a web app and a beautiful live PC wallpaper. It features a Roadmap Manager, Focus Timer, Health Rings, Social Sync to view friends' stats, an Anonymous Leaderboard, and seamless Offline + Cloud Sync.",
                 "github_link":"https://github.com/anandgonaboyina/wallpaper-dashboard-cloud",
                 "live_link":"https://wallpaper-dashboard-cloud.vercel.app/dashboard"
             },
