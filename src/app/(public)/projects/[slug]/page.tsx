@@ -3,9 +3,26 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 
 export default async function ProjectCaseStudy({ params }: { params: Promise<{ slug: string }> }) {
-    const query = "SELECT * FROM portfolio_projects WHERE slug = ?";
     const value = (await params).slug;
-    const [rows] = await pool.execute(query, [value]) as any[];
+    let rows: any[] = [];
+    
+    try {
+        const query = "SELECT * FROM portfolio_projects WHERE slug = ?";
+        [rows] = await pool.execute(query, [value]) as any[];
+    } catch (error) {
+        console.error("Database connection error:", error);
+        return (
+            <div className="min-h-screen flex flex-col items-center justify-center p-8 text-center bg-gray-50">
+                <h1 className="text-3xl font-bold text-red-600 mb-4">Database Connection Error</h1>
+                <p className="text-gray-600 mb-8 max-w-md">
+                    Unable to connect to the database to fetch this project. The database might be offline or sleeping.
+                </p>
+                <Link href="/" className="px-6 py-3 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 transition">
+                    Return Home
+                </Link>
+            </div>
+        );
+    }
 
     if (rows.length === 0) {
         notFound();
